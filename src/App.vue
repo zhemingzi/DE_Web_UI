@@ -6,7 +6,7 @@
 
 <script>
 import todoitemcomponent from "./components/todo-item.vue";
-import Ocean1 from "./components/Ocean_1.vue";
+import Ocean1 from "./components/Ocean_4_bar.vue";
 export default {
   name: "App",
   data() {
@@ -24,7 +24,9 @@ export default {
 
 <style>
 #app {
-  height: 740px;
+  position: relative;
+  width: 1920px;
+  height: 1080px;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
