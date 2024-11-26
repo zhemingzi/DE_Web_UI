@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import todoitemcomponent from "./components/todo-item.vue";
-import Ocean1 from "./components/Ocean_4_bar.vue";
+// import todoitemcomponent from "./components/todo-item.vue";
+import Ocean1 from "./components/Ocean_2.vue";
+
 export default {
   name: "App",
   data() {
@@ -18,21 +19,22 @@ export default {
       ],
     };
   },
-  components: { todoitemcomponent, Ocean1 },
+  components: { Ocean1 },
 };
 </script>
 
 <style>
 #app {
   position: relative;
-  width: 1920px;
-  height: 1080px;
+  width: 1600px;
+  height: 900px;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #235f9a;
-  background-color: #021227;
+  background-color: #07315b;
+  /* background-image: "./assets/beijing.png"; */
   margin: 0px;
   /* margin-top: 60px; */
 }
