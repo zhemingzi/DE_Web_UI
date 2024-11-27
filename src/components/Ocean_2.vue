@@ -54,7 +54,7 @@
     </div>
     <div class="ocean1-bar">
       <img
-        src="../assets/Sidebar/测边框1-3.png"
+        src="../assets/Sidebar/测边框1-4.png"
         style="
           position: absolute;
           top: -50px;
@@ -118,7 +118,68 @@
         CTD面板
       </p>
       <div class="box"></div>
-      <div class="boxx"></div>
+
+      <div class="panel1" style="width: 500px; height: 320px">
+        <div class="panelBorderOuter">
+          <div class="panelBorderInner">
+            <div>
+              <img
+                src="../assets/Panel/TitleBar3.png"
+                style="
+                  position: absolute;
+                  left: 12px;
+                  top: 4px;
+                  height: 32px;
+                  width: 90%;
+                "
+              />
+              <p
+                style="
+                  position: absolute;
+                  font-size: 20px;
+                  color: rgba(255, 255, 255, 255);
+                  top: 8px;
+                  left: 12%;
+                "
+              >
+                CTD面板
+              </p>
+              <div
+                class="words"
+                style="position: relative; height: 200px; width: 480px"
+              >
+                <p
+                  style="
+                    position: absolute;
+                    top: 200px;
+                    left: 20px;
+                    font-size: 20px;
+                    color: rgb(255, 255, 255);
+                    /* background-image: url('../assets/Panel/3-边框.png'); */
+                    background-color: rgb(255, 255, 255, 255);
+                  "
+                >
+                  测试文字CTD
+                </p>
+                <p
+                  style="
+                    position: absolute;
+                    top: 100px;
+                    left: 20px;
+                    font-size: 20px;
+                    color: rgb(255, 255, 255);
+                    /* background-image: url('../assets/Panel/3-边框.png'); */
+                    background-color: rgb(255, 255, 255, 255);
+                  "
+                >
+                  测试文字CTD
+                </p>
+                <input id="slider" type="range" min="0" max="550" step="1"  style="position: absolute;top: 107px;right: 40px;width: 180px; "/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -162,6 +223,7 @@ export default {
 }
 
 .ocean1-panel {
+  animation: animated-border 4s infinite;
   position: relative;
   top: 30%;
   left: 20%;
@@ -174,11 +236,25 @@ export default {
     box-shadow: 0 0 0 0 rgba(134, 211, 230, 1);
   }
   100% {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
   }
 }
+@keyframes animated-border2 {
+  0% {
+    margin: auto;
+    filter: drop-shadow(0px 0px 0px rgb(85, 195, 242));
+  }
+  100% {
+    margin: auto;
+    filter: drop-shadow(0px 0px 30px rgba(241, 245, 246, 0));
+  }
+  /* 100% {
+    margin: auto;
+    filter: drop-shadow(0px 0px 1px rgba(29, 199, 241,1));
+  } */
+}
 .box {
-  animation: animated-border 1.5s infinite;
+  animation: animated-border2 3s infinite;
   font-family: Arial;
   font-size: 18px;
   line-height: 30px;
@@ -186,22 +262,23 @@ export default {
   color: rgb(14, 199, 232);
   border: 2px solid;
   padding: 15px;
-  border-radius: 10% 10% 10% 10%;
+  border-radius: 20px 40% 50% 10px;
 }
 .boxx {
+  animation: animated-border2 5s infinite;
   height: 100px;
   clip-path: polygon(
-    6px 0,
-    calc(100% - 6px) 0,
-
-    100% 6px,
-    100% calc(100% - 6px),
-    calc(100% - 6px) 100%,
-    6px 100%,
-
-    0 calc(100% - 6px),
-    0 6px
+    10px 0px,
+    calc(100% - 10px) 0px,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0px calc(100% - 10px),
+    0px 10px
   );
+  /* clip-path: border-box; */
+  /* clip-path: polygon(10% 0, 100% 50%, 50% 100%, 0 50%); */
 
   background: linear-gradient(-45deg, #287eef 4px, #0c4e81 0) bottom right,
     linear-gradient(45deg, #289eef 4px, #0c4e81 0) bottom left,
@@ -212,5 +289,129 @@ export default {
   background-repeat: no-repeat;
 
   border: solid 2px #289eef;
+}
+.panel1 {
+  position: relative;
+  border-radius: 16px 16px 16px 16px;
+  animation: animated-border 3s infinite;
+}
+.panelBorderOuter {
+  position: relative;
+  /* top: 0%;
+  left: 0%; */
+  clip-path: polygon(
+    10px 0px,
+    calc(100% - 10px) 0px,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0px calc(100% - 10px),
+    0px 10px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+        -45deg,
+        transparent 4px,
+        #03dafe 4px,
+        #03dafe 12px,
+        transparent 0
+      )
+      bottom right,
+    linear-gradient(
+        45deg,
+        transparent 0px,
+        #03dafe 4px,
+        #03dafe 12px,
+        transparent 0
+      )
+      bottom left,
+    linear-gradient(
+        135deg,
+        transparent 4px,
+        #03dafe 4px,
+        #03dafe 12px,
+        transparent 0
+      )
+      top left,
+    linear-gradient(
+        -135deg,
+        transparent 4px,
+        #03dafe 4px,
+        #03dafe 12px,
+        transparent 0
+      )
+      top right,
+    linear-gradient(0deg, #186abb 3px, transparent 0) bottom right,
+    linear-gradient(0deg, #03dafe 3px, transparent 0) bottom left,
+    linear-gradient(180deg, #03dafe 3px, transparent 0) top left,
+    linear-gradient(180deg, #03dafe 3px, transparent 0) top right,
+    linear-gradient(90deg, #03dafe 3px, #0587dee7 3px, transparent 0) bottom
+      left,
+    linear-gradient(90deg, #03dafe 3px, #179bf351 3px, transparent 120px) top
+      left,
+    linear-gradient(270deg, #03dafe 3px, #179bf351 3px, transparent 120px) bottom
+      right,
+    linear-gradient(270deg, #03dafe 3px, #179bf351 3px, transparent 120px) top
+      right;
+
+  background-repeat: no-repeat;
+}
+.panelBorderInner {
+  position: relative;
+  clip-path: polygon(
+    10px 0px,
+    calc(100% - 10px) 0px,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0px calc(100% - 10px),
+    0px 10px
+  );
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: linear-gradient(
+        -45deg,
+        transparent 4px,
+        rgb(45, 205, 208) 4px,
+        rgb(45, 205, 208) 10px,
+        transparent 0
+      )
+      bottom right,
+    linear-gradient(
+        45deg,
+        transparent 4px,
+        rgb(45, 205, 208) 4px,
+        rgb(45, 205, 208) 10px,
+        transparent 0
+      )
+      bottom left,
+    linear-gradient(
+        135deg,
+        transparent 4px,
+        rgb(45, 205, 208) 4px,
+        rgb(45, 205, 208) 10px,
+        transparent 0
+      )
+      top left,
+    linear-gradient(
+        -135deg,
+        transparent 4px,
+        rgb(45, 205, 208) 4px,
+        rgb(45, 205, 208) 10px,
+        transparent 0
+      )
+      top right;
+}
+.words > p {
+  width: 200px;
+  height: 30px;
+  background-image: url("../assets/Panel/4-文字底纹.png");
+  background-size: 200px 30px;
 }
 </style>

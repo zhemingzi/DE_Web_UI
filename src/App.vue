@@ -33,8 +33,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #235f9a;
-  background-color: #07315b;
-  /* background-image: "./assets/beijing.png"; */
+  /* background-color: #03101d; */
+  background-image: url('./assets/beijing.png');
+  background-size: 1600px 900px;
   margin: 0px;
   /* margin-top: 60px; */
 }
