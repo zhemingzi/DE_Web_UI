@@ -18,7 +18,7 @@ export default {
       const hour = this.padZero(this.now.getHours());
       const minute = this.padZero(this.now.getMinutes());
       const second = this.padZero(this.now.getSeconds());
-      return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+      return `${year}/${month}/${day} ${hour}:${minute}:${second}`;
     },
   },
   methods: {
@@ -38,4 +38,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+p {
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+}
+</style>
