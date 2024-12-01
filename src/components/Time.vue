@@ -18,7 +18,7 @@ export default {
       const hour = this.padZero(this.now.getHours());
       const minute = this.padZero(this.now.getMinutes());
       const second = this.padZero(this.now.getSeconds());
-      return `${year}/${month}/${day} ${hour}:${minute}:${second}`;
+      return `本地时间 `+` ${year}/${month}/${day} ${hour}:${minute}:${second}`;
     },
   },
   methods: {
