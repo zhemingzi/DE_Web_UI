@@ -23,6 +23,8 @@ export default {
 };
 </script>
 
+
+<!-- 下面各个背景图片用于测试观感效果 -->
 <style>
 #app {
   position: relative;
@@ -34,7 +36,9 @@ export default {
   text-align: center;
   color: #235f9a;
   /* background-color: #03101d; */
-  background-image: url('./assets/beijing.png');
+  background-image: url('./assets/Background/1-背景.png');
+  /* background-image: url('./assets/Background/2-背景.png'); */
+  /* background-image: url('./assets/Background/3-背景.png'); */
   background-size: 1600px 900px;
   margin: 0px;
   /* margin-top: 60px; */

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <input type="range" v-model="rangePercent" value="0" />
-    <div id="h4-container">
+    <input type="range" id="rangeslinder" ref="inputDom" @input="func" />
+    <!-- <div id="h4-container">
       <div id="h4-subcontainer">
         <h4>{{ rangePercent }}<span></span></h4>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -14,23 +14,30 @@ export default {
   name: "RangeSlinder",
   data() {
     return {
-      rangePercent: 0,
+      // rangeNow: 0,
+      // rangeMax: 0,
     };
   },
   methods: {
-    function() {
-      $('[type="range"]').on("change input", function () {
-        rangePercent = $('[type="range"]').val();
-        $("h4").html(rangePercent + "<span></span>");
-        $('[type="range"], h4>span').css(
-          "filter",
-          "hue-rotate(-" + rangePercent + "deg)"
-        );
-        $("h4").css({
-          transform: "translateX(-50%) scale(" + (1 + rangePercent / 100) + ")",
-          left: rangePercent + "%",
-        });
-      });
+    func(event) {
+      // $('[type="range"]').on("change input", function () {
+      //   rangePercent = $('[type="range"]').val();
+      //   $("h4").html(rangePercent + "<span></span>");
+      //   $('[type="range"], h4>span').css(
+      //     "filter",
+      //     "hue-rotate(-" + rangePercent + "deg)"
+      //   );
+      //   $("h4").css({
+      //     transform: "translateX(-50%) scale(" + (1 + rangePercent / 100) + ")",
+      //     left: rangePercent + "%",
+      //   });
+      // });
+      const slider = document.getElementById("rangeslinder");
+      const rangeMax = this.$refs.inputDom.max;
+      const rangeNow = this.$refs.inputDom.value;
+      const rangePercent = calc(rangeNow / rangeMax);
+      const changeDeg = calc(rangePercent * 180);
+      slider.style.filter = "hue-rotate(${changeDeg}deg)";
     },
   },
   created() {
@@ -40,16 +47,17 @@ export default {
 </script>
 
 <style scoped>
-.h4 {
+/* .h4 {
   color: #999;
   font-weight: 500;
   &:after {
     content: "%";
     padding-left: 1px;
   }
-}
+} */
 .input[type="range"] {
   -webkit-appearance: none;
+  appearance: none;
   outline: 0;
   border: 0;
   border-radius: 500px;
@@ -57,7 +65,6 @@ export default {
   max-width: 100%;
   margin: 24px 0 16px;
   transition: box-shadow 0.2s ease-in-out;
-  
 }
 .input[type="range"]::-webkit-slider-runnable-track {
   height: 40px;
@@ -66,21 +73,21 @@ export default {
   transition: box-shadow 0.2s ease-in-out;
 }
 .input[type="range"]::-webkit-slider-thumb {
-    width: 40px;
-    -webkit-appearance: none;
-    height: 40px;
-    cursor: ew-resize;
-    background: #fff;
-    box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 40px #1597ff;
-    border-radius: 50%;
-    transition: box-shadow 0.2s ease-in-out;
-    position: relative;
-  }
+  width: 40px;
+  -webkit-appearance: none;
+  height: 40px;
+  cursor: ew-resize;
+  background: #fff;
+  box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 40px #1597ff;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+}
 .input[type="range"]:active::-webkit-slider-thumb {
-    background: #fff;
-    box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
-  }
-#h4-container {
+  background: #fff;
+  box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
+}
+/* #h4-container {
   width: 400px;
   max-width: 100%;
   padding: 0 20px;
@@ -115,10 +122,10 @@ export default {
       }
     }
   }
-}
-.input:not(:active) + #h4-container h4 {
+} */
+/* .input:not(:active) + #h4-container h4 {
   opacity: 0;
   margin-top: -50px;
   pointer-events: none;
-}
+} */
 </style>
